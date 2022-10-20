@@ -21,36 +21,32 @@ window.addEventListener("load", function() {
     document.getElementById("tower").setAttribute("class", "hidden");
     document.getElementById("sorry").setAttribute("class", "hidden");  
     };
-    //building rideselect
+
   function rideSelect() {;
     const age = parseInt(document.querySelector("input#age").value);
     const height = parseInt(document.querySelector("input#height").value);
-    console.log('value of age', document.querySelector('age'));
     if (age && height) {
       if (age >= 12 && height >= 60) {
-        document.getElementById("div#swings").removeAttribute("class");
-        document.getElementById("div#coaster").removeAttribute("class");
-        document.getElementById("div#tower").removeAttribute("class");
+        document.getElementById("swings").removeAttribute("class");
+        document.getElementById("coaster").removeAttribute("class");
+        document.getElementById("tower").removeAttribute("class");
       } else if (age >= 12 || height >= 48) {
-        document.getElementById("div#swings").removeAttribute("class");
-        document.getElementById("div#coaster").removeAttribute("class");
+        document.getElementById("swings").removeAttribute("class");
+        document.getElementById("coaster").removeAttribute("class");
       } else if (age >= 5) {
-        document.getElementById("div#swings").removeAttribute("class");
+        document.getElementById("swings").removeAttribute("class");
       } else {
-        document.getElementById("div#sorry").removeAttribute("class");
+        document.getElementById("sorry").removeAttribute("class");
       }
     };
   };
+
     // variable declaration
   let form = document.querySelector("form");
   //creating the submit listener and specifying its function
   form.addEventListener("submit", function(event) {
     event.preventDefault();
-    console.log('about to reset')
-    // resetClass();
-    console.log('about to select')
-    // console.log('current value of div#swings', document.querySelector('.swings').value)
-    rideSelect();
-      console.log('current value of div#swings', document.querySelector('swings'))
-    });
+    resetClass();
+    rideSelect();   
   });
+});
